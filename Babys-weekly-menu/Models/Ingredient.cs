@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BabysWeeklyMenu.API.Models
+namespace BabysWeeklyMenu.Models
 {
     public class Ingredient
     {

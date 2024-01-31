@@ -1,4 +1,4 @@
-namespace Babys_weekly_menu.Models
+namespace BabysWeeklyMenu.Models
 {
     public class ErrorViewModel
     {

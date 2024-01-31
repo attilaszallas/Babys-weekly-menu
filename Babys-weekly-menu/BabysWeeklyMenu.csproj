@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-Babys_weekly_menu-808be181-c078-474b-b0f2-e69c4985ba0b</UserSecretsId>
-    <RootNamespace>Babys_weekly_menu</RootNamespace>
+    <RootNamespace>BabysWeeklyMenu</RootNamespace>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 

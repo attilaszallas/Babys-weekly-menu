@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BabysWeeklyMenu.API.Models
+namespace BabysWeeklyMenu.Models
 {
     public class Allergy
     {

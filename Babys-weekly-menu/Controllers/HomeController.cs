@@ -1,8 +1,8 @@
-using Babys_weekly_menu.Models;
+using BabysWeeklyMenu.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Babys_weekly_menu.Controllers
+namespace BabysWeeklyMenu.Controllers
 {
     public class HomeController : Controller
     {
