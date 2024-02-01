@@ -22,6 +22,14 @@ namespace BabysWeeklyMenu.Controllers
         }
 
         [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var ingredient = _dBcontext.Ingredients.Find(id);
+
+            return View(ingredient);
+        }
+
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
