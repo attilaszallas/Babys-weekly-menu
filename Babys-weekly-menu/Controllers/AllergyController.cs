@@ -55,6 +55,14 @@ namespace BabysWeeklyMenu.Controllers
         }
 
         [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var allergy = _dBcontext.Allergies.Find(id);
+
+            return View(allergy);
+        }
+
+        [HttpGet]
         public IActionResult Delete(int id)
         {
             var allergy = _dBcontext.Allergies.Find(id);
