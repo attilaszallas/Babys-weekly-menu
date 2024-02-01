@@ -39,7 +39,7 @@ namespace BabysWeeklyMenu.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var dish = _dBcontext.Allergies.Find(id);
+            var dish = _dBcontext.Dishes.Find(id);
 
             return View(dish);
         }
@@ -57,7 +57,7 @@ namespace BabysWeeklyMenu.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var dish = _dBcontext.Allergies.Find(id);
+            var dish = _dBcontext.Dishes.Find(id);
 
             return View(dish);
         }
