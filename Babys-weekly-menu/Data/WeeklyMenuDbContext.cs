@@ -1,11 +1,11 @@
 ﻿using BabysWeeklyMenu.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BabysWeeklyMenu.API.Data
+namespace BabysWeeklyMenu.Data
 {
-    public class WeeklyMenuContext : DbContext
+    public class WeeklyMenuDbContext : DbContext
     {
-        public WeeklyMenuContext(DbContextOptions<WeeklyMenuContext> options) : base(options) { }
+        public WeeklyMenuDbContext(DbContextOptions<WeeklyMenuDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
