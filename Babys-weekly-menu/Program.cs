@@ -1,13 +1,19 @@
 using Babys_weekly_menu.Data;
+using BabysWeeklyMenu.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var identityConnectionString = builder.Configuration.GetConnectionString("IdentityConnection") ?? throw new InvalidOperationException("Connection string 'IdentityConnection' not found.");
+var weeklyMenuConnectionString = builder.Configuration.GetConnectionString("WeeklyMenuConnection") ?? throw new InvalidOperationException("Connection string 'WeeklyMenuConnection' not found.");
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(identityConnectionString));
+builder.Services.AddDbContext<WeeklyMenuDbContext>(options =>
+    options.UseSqlServer(weeklyMenuConnectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
