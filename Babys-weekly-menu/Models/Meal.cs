@@ -8,6 +8,7 @@ namespace BabysWeeklyMenu.Models
         [Required]
         public int Id { get; set; }
         [Required]
+        public string Name { get; set; }
         public int Time { get; set; }
         public virtual ICollection<Dish>? Dishes { get; set; }
     }
