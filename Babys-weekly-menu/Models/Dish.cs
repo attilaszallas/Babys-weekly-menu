@@ -11,7 +11,6 @@ namespace BabysWeeklyMenu.Models
         public string Name { get; set; } = null!;
         public string? Description { get; set; }
         public string? Image { get; set; }
-        public string? Recipe { get; set; }
-        public virtual ICollection<Ingredient>? Ingredients { get; set; }
+        public virtual ICollection<Ingredient>? Recipes { get; set; }
     }
 }
