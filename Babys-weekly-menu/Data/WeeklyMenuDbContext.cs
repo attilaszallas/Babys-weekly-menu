@@ -9,6 +9,7 @@ namespace BabysWeeklyMenu.Data
 
         public DbSet<Allergy> Allergies { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Day> Days { get; set; }
