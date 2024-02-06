@@ -22,8 +22,13 @@ namespace BabysWeeklyMenu.Controllers
         }
 
         [HttpGet]
-        public IActionResult Details(int id)
+        public IActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
             var allergy = _dBcontext.Allergies.Find(id);
 
             return View(allergy);
@@ -38,6 +43,11 @@ namespace BabysWeeklyMenu.Controllers
         [HttpPost]
         public IActionResult Create(Allergy allergy)
         {
+            if (allergy == null)
+            {
+                return BadRequest();
+            }
+
             _dBcontext.Allergies.Add(allergy);
             _dBcontext.SaveChanges();
 
@@ -45,8 +55,13 @@ namespace BabysWeeklyMenu.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int? id)
         {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
             var allergy = _dBcontext.Allergies.Find(id);
 
             return View(allergy);
@@ -55,6 +70,11 @@ namespace BabysWeeklyMenu.Controllers
         [HttpPost]
         public IActionResult Edit(Allergy allergy)
         {
+            if (allergy == null)
+            {
+                return BadRequest();
+            }
+
             _dBcontext.Allergies.Update(allergy);
 
             _dBcontext.SaveChanges();
@@ -63,8 +83,13 @@ namespace BabysWeeklyMenu.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
             var allergy = _dBcontext.Allergies.Find(id);
 
             return View(allergy);
@@ -73,6 +98,11 @@ namespace BabysWeeklyMenu.Controllers
         [HttpPost]
         public IActionResult Delete(Allergy allergy)
         {
+            if (allergy == null)
+            {
+                return BadRequest();
+            }
+
             _dBcontext.Remove(allergy);
             _dBcontext.SaveChanges();
 
