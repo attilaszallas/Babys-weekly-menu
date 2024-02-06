@@ -3,7 +3,7 @@ using BabysWeeklyMenu.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace BabysWeeklyMenu.Controllers
+namespace BabysWeeklyMenu.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
