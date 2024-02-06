@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 var identityConnectionString = builder.Configuration.GetConnectionString("IdentityConnection") ?? throw new InvalidOperationException("Connection string 'IdentityConnection' not found.");
 var weeklyMenuConnectionString = builder.Configuration.GetConnectionString("WeeklyMenuConnection") ?? throw new InvalidOperationException("Connection string 'WeeklyMenuConnection' not found.");
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<IdentityDbContext>(options =>
     options.UseSqlServer(identityConnectionString));
 builder.Services.AddDbContext<WeeklyMenuDbContext>(options =>
     options.UseSqlServer(weeklyMenuConnectionString));
@@ -17,7 +17,7 @@ builder.Services.AddDbContext<WeeklyMenuDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<IdentityDbContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

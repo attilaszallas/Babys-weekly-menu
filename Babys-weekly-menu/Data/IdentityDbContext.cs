@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Babys_weekly_menu.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class IdentityDbContext : Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
             : base(options)
         {
         }
