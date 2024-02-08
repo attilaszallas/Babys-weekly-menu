@@ -1,11 +1,15 @@
 ﻿using BabysWeeklyMenu.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BabysWeeklyMenu.Data
 {
-    public class WeeklyMenuDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
-        public WeeklyMenuDbContext(DbContextOptions<WeeklyMenuDbContext> options) : base(options) { }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        {
+        }
 
         public DbSet<Allergy> Allergies { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }

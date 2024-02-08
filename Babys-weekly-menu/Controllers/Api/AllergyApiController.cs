@@ -9,9 +9,9 @@ namespace BabysWeeklyMenu.Controllers.Api
     [ApiController]
     public class AllergyApiController : ControllerBase
     {
-        private readonly WeeklyMenuDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public AllergyApiController(WeeklyMenuDbContext context)
+        public AllergyApiController(ApplicationDbContext context)
         {
             _context = context ?? throw new ArgumentNullException();
             _context.Database.EnsureCreated();

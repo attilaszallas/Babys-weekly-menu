@@ -7,9 +7,9 @@ namespace BabysWeeklyMenu.Controllers
 {
     public class RecipesController : Controller
     {
-        private readonly WeeklyMenuDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public RecipesController(WeeklyMenuDbContext context)
+        public RecipesController(ApplicationDbContext context)
         {
             _context = context;
         }

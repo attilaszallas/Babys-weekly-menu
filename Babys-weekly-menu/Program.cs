@@ -1,4 +1,3 @@
-using Babys_weekly_menu.Data;
 using BabysWeeklyMenu.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -6,18 +5,15 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var identityConnectionString = builder.Configuration.GetConnectionString("IdentityConnection") ?? throw new InvalidOperationException("Connection string 'IdentityConnection' not found.");
-var weeklyMenuConnectionString = builder.Configuration.GetConnectionString("WeeklyMenuConnection") ?? throw new InvalidOperationException("Connection string 'WeeklyMenuConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("DbConnection") ?? throw new InvalidOperationException("Connection string 'DbConnection' not found.");
 
-builder.Services.AddDbContext<IdentityDbContext>(options =>
-    options.UseSqlServer(identityConnectionString));
-builder.Services.AddDbContext<WeeklyMenuDbContext>(options =>
-    options.UseSqlServer(weeklyMenuConnectionString));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<IdentityDbContext>();
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
